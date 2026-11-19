@@ -1,0 +1,71 @@
+@startuml
+skinparam dpi 170
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+skinparam defaultFontName DejaVu Sans
+skinparam defaultFontSize 12
+skinparam roundCorner 6
+skinparam nodesep 45
+skinparam ranksep 55
+skinparam ArrowColor #3B4A5C
+skinparam class {
+  BackgroundColor #FFFFFF
+  BorderColor #3B4A5C
+  BorderThickness 1.3
+  HeaderBackgroundColor #ECEFF3
+  FontStyle bold
+  StereotypeFontColor #555555
+}
+skinparam note {
+  BackgroundColor #FDFBEA
+  BorderColor #B9A64B
+  FontSize 11
+}
+skinparam package {
+  BorderColor #8A8A8A
+  FontStyle normal
+}
+skinparam stereotypeIBackgroundColor #FFF4D6
+skinparam stereotypeABackgroundColor #E3F1E8
+hide empty members
+class Casa {
+  -registro: RegistroDispositivos
+  +modoCine(): void
+  +salirDeCasa(): void
+}
+class RegistroDispositivos {
+  -dispositivos: List<Object>
+  +RegistroDispositivos()
+  +registrar(d: Object): void
+  +total(): int
+}
+class LuzMarcaA <<SDK>> {
+  +setBrillo(porcentaje: int): void
+}
+class PersianaMarcaB <<SDK>> {
+  +posicion(nivel0a255: int): void
+}
+class AireMarcaC <<SDK>> {
+  +setFahrenheit(f: int): void
+  +apagar(): void
+}
+class CerraduraMarcaD <<SDK>> {
+  -persiana: PersianaMarcaB
+  +bloquear(): void
+  +desbloquear(): void
+}
+class SensorMovimiento {
+  -luzPasillo: LuzMarcaA
+  -cerradura: CerraduraMarcaD
+  +detectar(hora: int): void
+}
+Casa --> RegistroDispositivos
+Casa --> LuzMarcaA
+Casa --> PersianaMarcaB
+Casa --> AireMarcaC
+Casa --> CerraduraMarcaD
+SensorMovimiento --> LuzMarcaA
+SensorMovimiento --> CerraduraMarcaD
+CerraduraMarcaD --> PersianaMarcaB
+SensorMovimiento ..> RegistroDispositivos : new
+@enduml

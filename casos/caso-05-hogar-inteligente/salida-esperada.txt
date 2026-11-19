@@ -1,0 +1,16 @@
+ escena: modo cine
+  luz sala -> 20%
+  persiana -> nivel 100/255
+  aire -> 72 °F
+ (no hay forma de deshacer el modo cine)
+ sensor: movimiento a las 23h
+  luz pasillo -> 40%
+  cerradura -> bloqueada
+  persiana -> nivel 255/255
+ escena: salir de casa
+  luz sala -> 0%
+  luz pasillo -> 0%
+  aire -> apagado
+  cerradura -> bloqueada
+  persiana -> nivel 255/255
+Dispositivos en el registro de la casa: 4 (hay 6 instalados)

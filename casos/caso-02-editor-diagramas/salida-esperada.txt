@@ -1,0 +1,4 @@
+Inicial:           [Logo[Rect(0,0), Circ(25,10)], Circ(100,100)]
+Duplicar y mover:  [Logo[Rect(200,0), Circ(225,10)], Circ(100,100), Logo-copia[Rect(200,0), Circ(225,10)]]
+Deshacer x2:       [Logo[Rect(0,0), Circ(25,10)], Circ(100,100), Logo-copia[Rect(0,0), Circ(25,10)]]
+Restaurar v0:      [Logo[Rect(0,0), Circ(25,10)], Circ(100,100)]

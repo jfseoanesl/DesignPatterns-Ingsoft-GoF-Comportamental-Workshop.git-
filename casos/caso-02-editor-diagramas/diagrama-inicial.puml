@@ -1,0 +1,66 @@
+@startuml
+skinparam dpi 170
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+skinparam defaultFontName DejaVu Sans
+skinparam defaultFontSize 12
+skinparam roundCorner 6
+skinparam nodesep 45
+skinparam ranksep 55
+skinparam ArrowColor #3B4A5C
+skinparam class {
+  BackgroundColor #FFFFFF
+  BorderColor #3B4A5C
+  BorderThickness 1.3
+  HeaderBackgroundColor #ECEFF3
+  FontStyle bold
+  StereotypeFontColor #555555
+}
+skinparam note {
+  BackgroundColor #FDFBEA
+  BorderColor #B9A64B
+  FontSize 11
+}
+skinparam package {
+  BorderColor #8A8A8A
+  FontStyle normal
+}
+skinparam stereotypeIBackgroundColor #FFF4D6
+skinparam stereotypeABackgroundColor #E3F1E8
+hide empty members
+class Editor {
+  -figuras: List<Object>
+  -versiones: List<List<Object>>
+  -ultimaFigura: Object
+  -ultimoDx: int
+  -ultimoDy: int
+  +agregar(f: Object): void
+  +mover(f: Object, dx: int, dy: int): void
+  +duplicar(f: Object): Object
+  +deshacer(): void
+  +guardarVersion(): void
+  +restaurarVersion(i: int): void
+  +dibujar(): String
+}
+class Rectangulo {
+  +x: int
+  +y: int
+  +ancho: int
+  +alto: int
+}
+class Circulo {
+  +x: int
+  +y: int
+  +radio: int
+}
+class Grupo {
+  +nombre: String
+  +hijos: List<Object>
+}
+Editor o--> "*" Rectangulo
+Editor o--> "*" Circulo
+Editor o--> "*" Grupo
+Grupo o--> "*" Rectangulo
+Grupo o--> "*" Circulo
+Grupo o--> "*" Grupo
+@enduml

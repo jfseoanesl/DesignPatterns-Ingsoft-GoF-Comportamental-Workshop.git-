@@ -1,0 +1,6 @@
+Total carrito: $98,600
+PORCENTAJE;LACTEOS;15      -> $5,880
+LLEVE_PAGUE;GASEOSA;3;2    -> $12,000
+POR_MONTO;80000;40000      -> $40,000
+AFILIADO;5                 -> $4,930
+Descuento total: $62,810 (tope diario $50,000)

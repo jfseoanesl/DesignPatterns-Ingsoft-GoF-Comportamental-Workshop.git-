@@ -1,0 +1,21 @@
+P-001:
+  No se puede despachar en estado CREADO
+  [inventario] reserva [café, miel]
+  [notificación a ana] Pago recibido por $54000
+  [analítica] P-001 PAGADO
+  [notificación a ana] Pedido en camino, guía RAPI-39662 (empaque de regalo)
+  [analítica] P-001 DESPACHADO
+  [notificación a ana] Pedido entregado en franja tarde
+  [analítica] P-001 ENTREGADO
+  No se puede cancelar en estado ENTREGADO
+  estado final: ENTREGADO
+P-002:
+  [inventario] reserva [quinua]
+  [notificación a luis] Pago recibido por $18000
+  [analítica] P-002 PAGADO
+  [notificación a luis] Pedido en camino, guía RAPI-39229
+  [analítica] P-002 DESPACHADO
+  [inventario] libera [quinua]
+  [notificación a luis] Pedido cancelado; se reembolsarán $18000
+  [analítica] P-002 CANCELADO
+  estado final: CANCELADO

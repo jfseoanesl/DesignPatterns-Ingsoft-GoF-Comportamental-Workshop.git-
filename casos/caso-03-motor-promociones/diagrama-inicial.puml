@@ -1,0 +1,55 @@
+@startuml
+skinparam dpi 170
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+skinparam defaultFontName DejaVu Sans
+skinparam defaultFontSize 12
+skinparam roundCorner 6
+skinparam nodesep 45
+skinparam ranksep 55
+skinparam ArrowColor #3B4A5C
+skinparam class {
+  BackgroundColor #FFFFFF
+  BorderColor #3B4A5C
+  BorderThickness 1.3
+  HeaderBackgroundColor #ECEFF3
+  FontStyle bold
+  StereotypeFontColor #555555
+}
+skinparam note {
+  BackgroundColor #FDFBEA
+  BorderColor #B9A64B
+  FontSize 11
+}
+skinparam package {
+  BorderColor #8A8A8A
+  FontStyle normal
+}
+skinparam stereotypeIBackgroundColor #FFF4D6
+skinparam stereotypeABackgroundColor #E3F1E8
+hide empty members
+class CalculadoraDescuentos {
+  -topeDiario: long
+  -usadoHoy: long
+  +aplicar(lineaConfig: String, carrito: Carrito,
+  cliente: Cliente, sede: String, hoy: LocalDate): long
+}
+class Carrito {
+  +items: List<Item>
+  +total(): long
+}
+class Item <<record>> {
+  +producto: String
+  +categoria: String
+  +precio: long
+  +cantidad: int
+}
+class Cliente <<record>> {
+  +nombre: String
+  +afiliado: boolean
+  +bloqueado: boolean
+}
+CalculadoraDescuentos ..> Carrito
+CalculadoraDescuentos ..> Cliente
+Carrito *--> "*" Item
+@enduml

@@ -1,0 +1,11 @@
+  [SIA op 301] est-1001|HOM|8|certificado-uni-x.pdf
+  [correo a est-1001] Homologación aprobada por Director de programa. Costo $200000
+Homologación OK (Director de programa)
+  [SIA op 450] CAN;est-1002;8
+  [correo a est-1002] Cancelación aprobada por Coordinador. Costo $0
+Cancelación OK (Coordinador)
+  [correo a est-1003] Supletorio aprobado por Coordinador. Costo $60000
+  [SIA op 512] est-1003/SUP/INCAPACIDAD-EPS-778
+Supletorio OK (Coordinador)
+Rechazada: falta el certificado de notas
+Tipo de solicitud no soportado: REINTEGRO
